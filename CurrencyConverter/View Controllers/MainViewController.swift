@@ -61,6 +61,12 @@ class MainViewController: UIViewController, UITableViewDataSource {
     // MARK: - UI Actions
     
     @IBAction func priceTextFieldDidChange(_ textField: UITextField) {
+        // Handle case where user clears the text field
+        guard let text = textField.text, text.isEmpty == false else {
+            price = 0.0
+            return
+        }
+        
         // Make sure it's a  text that can be converted to a number
         guard let newPrice = Float(text) else { return }
         
