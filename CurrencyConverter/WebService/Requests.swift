@@ -21,4 +21,6 @@ extension URLRequest {
         return URLRequest(url: url)
     }
     
+    // IDEA: Add endpoint for fetching available currencies
+
 }

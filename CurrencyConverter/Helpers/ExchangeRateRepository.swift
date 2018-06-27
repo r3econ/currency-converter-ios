@@ -20,20 +20,35 @@ class ExchangeRateRepository {
     func getExchangeRate(for baseCurrency: String,
                          success: @escaping SuccessHandler,
                          failure: @escaping FailureHandler) {
+        // Call remote webservice
+        // IDEA: Add a case for loading from the local storage
+        getRemoteExchangeRate(for: baseCurrency, success: success, failure: failure)
+    }
+    
+    private func getRemoteExchangeRate(for baseCurrency: String,
+                                       success: @escaping SuccessHandler,
+                                       failure: @escaping FailureHandler) {
         // Make a call to the web service and forward results to the caller
         webService.getExchangeRate(for: baseCurrency, success: { exchangeRate in
             success(exchangeRate)
-            // TODO: Update the persistence layer here. Store the results
+            // IDEA: Update the persistence layer here. Store the results
         }, failure: { error in
             failure(error)
+            // IDEA: Decide whether to load local results instead of forwarding the error
         })
+    }
+    
+    private func getLocalExchangeRate(for baseCurrency: String,
+                                      success: @escaping SuccessHandler,
+                                      failure: @escaping FailureHandler) {
+        // IDEA: Load persisted exchange rate
     }
     
     // MARK: - Currencies
     
     /// Returns a list of available currency identifiers
     func availableCurrencies() -> [String] {
-        // TODO: Extend with API call. Hardcoded for now
+        // IDEA: Extend with API call. Hardcoded for now
         return ["CHF", "EUR", "USD", "PLN", "JPY", "GBP", "DKK"]
     }
     

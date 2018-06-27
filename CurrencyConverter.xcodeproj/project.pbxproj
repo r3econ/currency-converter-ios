@@ -23,6 +23,7 @@
 		86FB808120E3FA26002688B9 /* DateFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB808020E3FA26002688B9 /* DateFormatter+Extensions.swift */; };
 		86FB808320E3FC6B002688B9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB808220E3FC6B002688B9 /* String+Extensions.swift */; };
 		86FB808520E40128002688B9 /* ExchangeRateCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB808420E40128002688B9 /* ExchangeRateCalculator.swift */; };
+		86FB808720E40A7A002688B9 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB808620E40A7A002688B9 /* UIAlertController+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		86FB808020E3FA26002688B9 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		86FB808220E3FC6B002688B9 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		86FB808420E40128002688B9 /* ExchangeRateCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateCalculator.swift; sourceTree = "<group>"; };
+		86FB808620E40A7A002688B9 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,8 +187,8 @@
 		86FB807C20E3F706002688B9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				86FB807D20E3F714002688B9 /* ExchangeRateRepository.swift */,
 				86FB808420E40128002688B9 /* ExchangeRateCalculator.swift */,
+				86FB807D20E3F714002688B9 /* ExchangeRateRepository.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -196,6 +198,7 @@
 			children = (
 				86FB808020E3FA26002688B9 /* DateFormatter+Extensions.swift */,
 				86FB808220E3FC6B002688B9 /* String+Extensions.swift */,
+				86FB808620E40A7A002688B9 /* UIAlertController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				86FB807720E3F3D9002688B9 /* WebService.swift in Sources */,
 				86FB807920E3F50A002688B9 /* WebService+Calls.swift in Sources */,
 				86FB804120E3EEE4002688B9 /* AppDelegate.swift in Sources */,
+				86FB808720E40A7A002688B9 /* UIAlertController+Extensions.swift in Sources */,
 				86FB808120E3FA26002688B9 /* DateFormatter+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
