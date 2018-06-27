@@ -5,7 +5,7 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDataSource, CurrencyPickerViewControllerDelegate {
 
     private let repository = ExchangeRateRepository()
     
@@ -29,6 +29,13 @@ class MainViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    private var selectedBaseCurrency = "USD" {
+        didSet {
+            updateBaseCurrencyButton()
+            fetchExchangeRate()
+        }
+    }
+    
     // MARK: - View lifecycle
 
     override func viewDidLoad() {
@@ -40,7 +47,7 @@ class MainViewController: UIViewController, UITableViewDataSource {
     // MARK: - Data
 
     private func fetchExchangeRate() {
-        repository.getExchangeRate(for: "USD", success: { exchangeRate in
+        repository.getExchangeRate(for: selectedBaseCurrency, success: { exchangeRate in
             // Set the exchange rate, this triggers UI update
             self.exchangeRate = exchangeRate
             
@@ -82,7 +89,12 @@ class MainViewController: UIViewController, UITableViewDataSource {
         
         // Show currency picker
         let currencyPicker = CurrencyPickerViewController.controller(with: currencies)
+        currencyPicker.delegate = self
         navigationController!.pushViewController(currencyPicker, animated: true)
+    }
+    
+    private func updateBaseCurrencyButton() {
+        baseCurrencyButton.setTitle(selectedBaseCurrency, for: .normal)
     }
     
     // MARK: - UITableViewControllerDataSource
@@ -106,6 +118,17 @@ class MainViewController: UIViewController, UITableViewDataSource {
         cell.detailTextLabel!.text = currencyKey.currencyName
         
         return cell
+    }
+    
+    // MARK: - CurrencyPickerViewControllerDelegate
+    
+    func currencyPickerViewController(_ controller: CurrencyPickerViewController,
+                                      didFinishWithCurrency currency: String) {
+        // Set new currency
+        selectedBaseCurrency = currency
+        
+        // Dismiss the picker
+        controller.navigationController!.popToViewController(self, animated: true)
     }
 
 }

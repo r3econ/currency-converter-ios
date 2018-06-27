@@ -5,8 +5,15 @@
 
 import UIKit
 
+protocol CurrencyPickerViewControllerDelegate: class {
+    func currencyPickerViewController(_ controller: CurrencyPickerViewController,
+                                      didFinishWithCurrency currency: String)
+}
+
 class CurrencyPickerViewController: UITableViewController {
     
+    weak var delegate: CurrencyPickerViewControllerDelegate?
+
     private var currencies = [String]() {
         didSet {
             guard isViewLoaded else { return }
@@ -33,6 +40,14 @@ class CurrencyPickerViewController: UITableViewController {
         super.viewDidLoad()
         
         tableView.reloadData()
+    }
+    
+    // MARK: - UITableViewControllerDelegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // Inform the delegate about the selected currency
+        delegate?.currencyPickerViewController(self,
+                                               didFinishWithCurrency: currencies[indexPath.row])
     }
     
     // MARK: - UITableViewControllerDataSource
