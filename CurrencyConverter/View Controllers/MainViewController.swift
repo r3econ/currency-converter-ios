@@ -77,7 +77,12 @@ class MainViewController: UIViewController, UITableViewDataSource {
     @IBOutlet var baseCurrencyButton: UIButton!
     
     @IBAction func changeBaseCurrencyButtonTapped(sender: Any) {
-
+        // Get available currencies
+        let currencies = repository.availableCurrencies()
+        
+        // Show currency picker
+        let currencyPicker = CurrencyPickerViewController.controller(with: currencies)
+        navigationController!.pushViewController(currencyPicker, animated: true)
     }
     
     // MARK: - UITableViewControllerDataSource
