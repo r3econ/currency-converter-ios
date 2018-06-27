@@ -67,7 +67,8 @@ class MainViewController: UIViewController, UITableViewDataSource {
         let currencyKey = currencies[indexPath.row]
         let price = calculatedPrices[currencyKey]!
         
-        cell.textLabel!.text = "\(price) \(currencyKey)"
+        cell.textLabel!.text = String(format: "%.2f %@", price, currencyKey.currencySymbol)
+        cell.detailTextLabel!.text = currencyKey.currencyName
         
         return cell
     }

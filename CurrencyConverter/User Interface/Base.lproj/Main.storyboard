@@ -54,17 +54,24 @@
                                 <rect key="frame" x="0.0" y="196" width="375" height="471"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CurrencyPriceCell" textLabel="Guu-qq-a1k" style="IBUITableViewCellStyleDefault" id="D0s-nf-UPN">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CurrencyPriceCell" textLabel="Guu-qq-a1k" detailTextLabel="rwe-RV-6MX" rowHeight="60" style="IBUITableViewCellStyleValue1" id="D0s-nf-UPN">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D0s-nf-UPN" id="c9d-Tz-1qR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="100.0 USD" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Guu-qq-a1k">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="100.0 USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Guu-qq-a1k">
+                                                    <rect key="frame" x="15" y="17" width="101.5" height="25.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="American Dollar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rwe-RV-6MX">
+                                                    <rect key="frame" x="231.5" y="20" width="128.5" height="21.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -76,17 +83,26 @@
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="ofv-zL-VQD"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DUz-Pn-rLg">
+                                <rect key="frame" x="0.0" y="196" width="375" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="jkx-5e-rh7"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NM9-2J-XP8" secondAttribute="trailing" id="FVc-As-oqx"/>
-                            <constraint firstItem="swc-xO-J6P" firstAttribute="top" secondItem="NM9-2J-XP8" secondAttribute="bottom" id="TFS-fK-MJJ"/>
+                            <constraint firstItem="DUz-Pn-rLg" firstAttribute="top" secondItem="NM9-2J-XP8" secondAttribute="bottom" id="HCi-Yo-hXg"/>
+                            <constraint firstItem="DUz-Pn-rLg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UvR-lT-WPe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="swc-xO-J6P" secondAttribute="bottom" id="Vbq-QR-mvX"/>
                             <constraint firstItem="swc-xO-J6P" firstAttribute="top" secondItem="NM9-2J-XP8" secondAttribute="bottom" id="WjQ-Id-e8H"/>
                             <constraint firstItem="swc-xO-J6P" firstAttribute="top" secondItem="NM9-2J-XP8" secondAttribute="bottom" id="e0L-Ir-taq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="swc-xO-J6P" secondAttribute="trailing" id="hnn-bl-mpe"/>
                             <constraint firstItem="swc-xO-J6P" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kHW-rW-QJy"/>
                             <constraint firstItem="NM9-2J-XP8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l0T-UZ-gUa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DUz-Pn-rLg" secondAttribute="trailing" id="lpC-qF-dIL"/>
                             <constraint firstItem="NM9-2J-XP8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yMi-ov-VI0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
