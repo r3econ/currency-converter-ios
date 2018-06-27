@@ -7,15 +7,39 @@ import UIKit
 
 class MainViewController: UIViewController, UITableViewDataSource {
 
+    private let repository = ExchangeRateRepository()
+    
+    private var exchangeRate: ExchangeRate? {
+        didSet {
+            calculateCurrentPriceExchangeRate()
+        }
+    
+    }
+    
+    // MARK: - View lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        WebService().getExchangeRate(for: "USD", success: { exchangeRate in
+        fetchExchangeRate()
+    }
+    
+    // MARK: - Data
+
+    private func fetchExchangeRate() {
+        repository.getExchangeRate(for: "USD", success: { exchangeRate in
 
         }, failure: { error in
-            
-        })
 
+        })
+    }
+    
+    func calculateCurrentPriceExchangeRate() {
+        // Make sure we have a valid exchange rate fetched
+        // Otherwise it does not make sense to calculate prices
+        guard let rate = exchangeRate else { return }
+        
+        tableView.reloadData()
     }
 
     // MARK: - UITableViewControllerDataSource
