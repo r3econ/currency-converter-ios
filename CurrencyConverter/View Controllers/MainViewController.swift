@@ -58,6 +58,22 @@ class MainViewController: UIViewController, UITableViewDataSource {
         calculatedPrices = ExchangeRateCalculator().calculateExchangeRateFor(for: price, with: rate)
     }
 
+    // MARK: - UI Actions
+    
+    @IBAction func priceTextFieldDidChange(_ textField: UITextField) {
+        // Make sure it's a  text that can be converted to a number
+        guard let newPrice = Float(text) else { return }
+        
+        // Set new price. This triggers exchange ratio calculation
+        price = newPrice
+    }
+    
+    @IBOutlet var baseCurrencyButton: UIButton!
+    
+    @IBAction func changeBaseCurrencyButtonTapped(sender: Any) {
+
+    }
+    
     // MARK: - UITableViewControllerDataSource
     
     @IBOutlet var tableView: UITableView!

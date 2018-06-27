@@ -26,6 +26,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="priceTextFieldDidChange:" destination="BYZ-38-t0r" eventType="editingChanged" id="VV6-Gd-jn6"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="II8-Xa-4pO">
                                         <rect key="frame" x="300" y="15" width="60" height="50"/>
@@ -36,6 +39,9 @@
                                         <state key="normal" title="USD">
                                             <color key="titleColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="changeBaseCurrencyButtonTappedWithSender:" destination="BYZ-38-t0r" eventType="touchDragInside" id="51I-r4-5gr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.96275186540000002" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,6 +115,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Currency Converter" largeTitleDisplayMode="always" id="WPI-pc-e5V"/>
                     <connections>
+                        <outlet property="baseCurrencyButton" destination="II8-Xa-4pO" id="FNC-3q-UVw"/>
                         <outlet property="tableView" destination="swc-xO-J6P" id="WSS-ta-07R"/>
                     </connections>
                 </viewController>
