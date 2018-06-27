@@ -13,7 +13,13 @@ class MainViewController: UIViewController, UITableViewDataSource {
         didSet {
             calculateCurrentPriceExchangeRate()
         }
+    }
     
+    /// Prices computed using the fetched echange rate
+    private var calculatedPrices = [String: Float]() {
+        didSet {
+            tableView.reloadData()
+        }
     }
     
     // MARK: - View lifecycle
@@ -41,8 +47,7 @@ class MainViewController: UIViewController, UITableViewDataSource {
         // Otherwise it does not make sense to calculate prices
         guard let rate = exchangeRate else { return }
         
-        print(rate)
-        tableView.reloadData()
+        calculatedPrices = rate.rates
     }
 
     // MARK: - UITableViewControllerDataSource
@@ -50,14 +55,19 @@ class MainViewController: UIViewController, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return calculatedPrices.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue and configure the cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyPriceCell")!
         
-        cell.textLabel!.text = "100.0"
+        // Extract currency and price
+        let currencies = Array(calculatedPrices.keys)
+        let currencyKey = currencies[indexPath.row]
+        let price = calculatedPrices[currencyKey]!
+        
+        cell.textLabel!.text = "\(price) \(currencyKey)"
         
         return cell
     }
