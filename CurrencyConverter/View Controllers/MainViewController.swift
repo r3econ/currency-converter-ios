@@ -29,6 +29,7 @@ class MainViewController: UIViewController, UITableViewDataSource, CurrencyPicke
         }
     }
     
+    /// Base currency selected by the user
     private var selectedBaseCurrency = "USD" {
         didSet {
             updateBaseCurrencyButton()
@@ -52,7 +53,9 @@ class MainViewController: UIViewController, UITableViewDataSource, CurrencyPicke
             self.exchangeRate = exchangeRate
             
         }, failure: { error in
-
+            // Show alert describing the error
+            let alert = UIAlertController.errorAlert(for: error)
+            self.present(alert, animated: true)
         })
     }
     
