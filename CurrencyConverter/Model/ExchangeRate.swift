@@ -14,3 +14,23 @@ struct ExchangeRate {
     let rates: [String: Float]
     
 }
+
+extension ExchangeRate: Decodable {
+    
+    /// Mapping: property <-> JSON field name
+    enum CodingKeys: String, CodingKey {
+        case baseCurrency = "base"
+    }
+    
+    /// Initializer used by JSONDecoder when mapping JSON into an object
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        // Base currency
+        baseCurrency = try container.decode(String.self, forKey: CodingKeys.baseCurrency)
+        
+        date = Date()
+        rates = [String: Float]()
+    }
+    
+}
