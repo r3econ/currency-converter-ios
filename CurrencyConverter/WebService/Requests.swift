@@ -13,7 +13,7 @@ extension URLRequest {
         return URL(string: "https://exchangeratesapi.io/api/")!
     }
     
-    // Latest exchange rate for a given basecurrency
+    // Latest exchange rate for a given base currency
     // E.g. https://exchangeratesapi.io/api/latest?base=USD
     static func exchangeRateRequest(for baseCurrency: String) -> URLRequest {
         // Resolve the url
