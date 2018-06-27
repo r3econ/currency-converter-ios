@@ -28,7 +28,9 @@ class MainViewController: UIViewController, UITableViewDataSource {
 
     private func fetchExchangeRate() {
         repository.getExchangeRate(for: "USD", success: { exchangeRate in
-
+            // Set the exchange rate, this triggers UI update
+            self.exchangeRate = exchangeRate
+            
         }, failure: { error in
 
         })
@@ -39,6 +41,7 @@ class MainViewController: UIViewController, UITableViewDataSource {
         // Otherwise it does not make sense to calculate prices
         guard let rate = exchangeRate else { return }
         
+        print(rate)
         tableView.reloadData()
     }
 

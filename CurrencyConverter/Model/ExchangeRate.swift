@@ -36,7 +36,7 @@ extension ExchangeRate: Decodable {
         
         // Apply custom date formatting to extract the date
         let dateString = try container.decode(String.self, forKey: CodingKeys.date)
-        date = DateFormatter().date(from: dateString) ?? Date()
+        date = DateFormatter.shortDateFormatter.date(from: dateString)!
     }
     
 }
