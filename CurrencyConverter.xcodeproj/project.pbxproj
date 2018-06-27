@@ -16,6 +16,7 @@
 		86FB806120E3EEE5002688B9 /* CurrencyConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB806020E3EEE5002688B9 /* CurrencyConverterUITests.swift */; };
 		86FB807020E3F0EE002688B9 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB806F20E3F0EE002688B9 /* ExchangeRate.swift */; };
 		86FB807420E3F256002688B9 /* CurrencyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB807320E3F256002688B9 /* CurrencyPickerViewController.swift */; };
+		86FB807720E3F3D9002688B9 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB807620E3F3D9002688B9 /* WebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		86FB806220E3EEE5002688B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86FB806F20E3F0EE002688B9 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		86FB807320E3F256002688B9 /* CurrencyPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerViewController.swift; sourceTree = "<group>"; };
+		86FB807620E3F3D9002688B9 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				86FB806E20E3F0C8002688B9 /* Model */,
 				86FB807120E3F1BB002688B9 /* User Interface */,
 				86FB807220E3F1D6002688B9 /* View Controllers */,
+				86FB807520E3F3CB002688B9 /* WebService */,
 			);
 			path = CurrencyConverter;
 			sourceTree = "<group>";
@@ -153,6 +156,14 @@
 				86FB807320E3F256002688B9 /* CurrencyPickerViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		86FB807520E3F3CB002688B9 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				86FB807620E3F3D9002688B9 /* WebService.swift */,
+			);
+			path = WebService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,6 +300,7 @@
 				86FB804320E3EEE4002688B9 /* MainViewController.swift in Sources */,
 				86FB807420E3F256002688B9 /* CurrencyPickerViewController.swift in Sources */,
 				86FB807020E3F0EE002688B9 /* ExchangeRate.swift in Sources */,
+				86FB807720E3F3D9002688B9 /* WebService.swift in Sources */,
 				86FB804120E3EEE4002688B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
