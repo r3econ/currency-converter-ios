@@ -43,16 +43,21 @@ class MainViewController: UIViewController, UITableViewDataSource, CurrencyPicke
         super.viewDidLoad()
 
         fetchExchangeRate()
+        startPeriodicUpdates(timeInterval: 60.0)
     }
     
     // MARK: - Data
 
-    private func fetchExchangeRate() {
+    private func fetchExchangeRate(silenceError shouldSilenceError: Bool = false) {
         repository.getExchangeRate(for: selectedBaseCurrency, success: { exchangeRate in
             // Set the exchange rate, this triggers UI update
             self.exchangeRate = exchangeRate
             
         }, failure: { error in
+            guard shouldSilenceError == false else {
+                return
+            }
+            
             // Show alert describing the error
             let alert = UIAlertController.errorAlert(for: error)
             self.present(alert, animated: true)
@@ -98,6 +103,31 @@ class MainViewController: UIViewController, UITableViewDataSource, CurrencyPicke
     
     private func updateBaseCurrencyButton() {
         baseCurrencyButton.setTitle(selectedBaseCurrency, for: .normal)
+    }
+    
+    // MARK: - Periodic updates
+
+    private var updateTimer: Timer?
+
+    /// Starts a timer that triggers the exchange rate update
+    private func startPeriodicUpdates(timeInterval: TimeInterval) {
+        guard updateTimer == nil else {
+            return
+        }
+        
+        updateTimer = Timer.scheduledTimer(timeInterval: timeInterval,
+                                           target: self,
+                                           selector: #selector(updateTimerHandler),
+                                           userInfo: nil,
+                                           repeats: true)
+    }
+    
+    @objc
+    func updateTimerHandler() {
+        // Fetch exchange rate and ignore potential errors
+        // IDEA: The update logic could be handled by the repository. The repository could
+        // deliver information about the updates using notifications (NSNotificationCenter)
+        fetchExchangeRate(silenceError: true)
     }
     
     // MARK: - UITableViewControllerDataSource
