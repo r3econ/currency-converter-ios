@@ -15,6 +15,13 @@ class MainViewController: UIViewController, UITableViewDataSource {
         }
     }
     
+    /// Price entered by the user
+    private var price: Float = 1.0 {
+        didSet {
+            calculateCurrentPriceExchangeRate()
+        }
+    }
+    
     /// Prices computed using the fetched echange rate
     private var calculatedPrices = [String: Float]() {
         didSet {
@@ -47,7 +54,8 @@ class MainViewController: UIViewController, UITableViewDataSource {
         // Otherwise it does not make sense to calculate prices
         guard let rate = exchangeRate else { return }
         
-        calculatedPrices = rate.rates
+        // Calculate the exchange ratio for current price
+        calculatedPrices = ExchangeRateCalculator().calculateExchangeRateFor(for: price, with: rate)
     }
 
     // MARK: - UITableViewControllerDataSource
