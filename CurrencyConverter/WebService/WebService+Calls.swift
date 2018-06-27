@@ -1,6 +1,6 @@
 //
-//  Created by Rafał on 27.06.18.
-//  Copyright © 2018 None. All rights reserved.
+//  Created by Rafał Sroka on 27.06.18.
+//  Copyright © 2018 Rafał Sroka. All rights reserved.
 //
 
 import Foundation
