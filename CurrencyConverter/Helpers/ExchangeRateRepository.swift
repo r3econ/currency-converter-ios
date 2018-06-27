@@ -34,7 +34,7 @@ class ExchangeRateRepository {
     /// Returns a list of available currency identifiers
     func availableCurrencies() -> [String] {
         // TODO: Extend with API call. Hardcoded for now
-        return ["CHF", "EUR", "USD"]
+        return ["CHF", "EUR", "USD", "PLN", "JPY", "GBP", "DKK"]
     }
     
 }

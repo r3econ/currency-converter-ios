@@ -38,12 +38,17 @@ class CurrencyPickerViewController: UITableViewController {
     // MARK: - UITableViewControllerDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return currencies.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Dequeue and configure the cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "CurrencyCell")!
+        
+        let currencyKey = currencies[indexPath.row]
+        cell.textLabel!.text = currencyKey
+        cell.detailTextLabel!.text = currencyKey.currencyName
+        
         return cell
     }
     

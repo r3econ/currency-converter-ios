@@ -166,8 +166,8 @@
 		86FB807220E3F1D6002688B9 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				86FB804220E3EEE4002688B9 /* MainViewController.swift */,
 				86FB807320E3F256002688B9 /* CurrencyPickerViewController.swift */,
+				86FB804220E3EEE4002688B9 /* MainViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
