@@ -9,7 +9,13 @@ class MainViewController: UIViewController, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        WebService().getExchangeRate(for: "USD", success: { exchangeRate in
+
+        }, failure: { error in
+            
+        })
+
     }
 
     // MARK: - UITableViewControllerDataSource

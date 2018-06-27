@@ -17,6 +17,7 @@
 		86FB807020E3F0EE002688B9 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB806F20E3F0EE002688B9 /* ExchangeRate.swift */; };
 		86FB807420E3F256002688B9 /* CurrencyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB807320E3F256002688B9 /* CurrencyPickerViewController.swift */; };
 		86FB807720E3F3D9002688B9 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB807620E3F3D9002688B9 /* WebService.swift */; };
+		86FB807920E3F50A002688B9 /* WebService+Calls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB807820E3F50A002688B9 /* WebService+Calls.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		86FB806F20E3F0EE002688B9 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 		86FB807320E3F256002688B9 /* CurrencyPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerViewController.swift; sourceTree = "<group>"; };
 		86FB807620E3F3D9002688B9 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		86FB807820E3F50A002688B9 /* WebService+Calls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebService+Calls.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				86FB807620E3F3D9002688B9 /* WebService.swift */,
+				86FB807820E3F50A002688B9 /* WebService+Calls.swift */,
 			);
 			path = WebService;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				86FB807420E3F256002688B9 /* CurrencyPickerViewController.swift in Sources */,
 				86FB807020E3F0EE002688B9 /* ExchangeRate.swift in Sources */,
 				86FB807720E3F3D9002688B9 /* WebService.swift in Sources */,
+				86FB807920E3F50A002688B9 /* WebService+Calls.swift in Sources */,
 				86FB804120E3EEE4002688B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
