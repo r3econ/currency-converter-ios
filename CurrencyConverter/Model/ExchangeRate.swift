@@ -20,6 +20,8 @@ extension ExchangeRate: Decodable {
     /// Mapping: property <-> JSON field name
     enum CodingKeys: String, CodingKey {
         case baseCurrency = "base"
+        case date
+        case rates
     }
     
     /// Initializer used by JSONDecoder when mapping JSON into an object
@@ -29,8 +31,12 @@ extension ExchangeRate: Decodable {
         // Base currency
         baseCurrency = try container.decode(String.self, forKey: CodingKeys.baseCurrency)
         
-        date = Date()
-        rates = [String: Float]()
+        // Rates dictionary
+        rates = try container.decode([String: Float].self, forKey: CodingKeys.rates)
+        
+        // Apply custom date formatting to extract the date
+        let dateString = try container.decode(String.self, forKey: CodingKeys.date)
+        date = DateFormatter().date(from: dateString) ?? Date()
     }
     
 }
