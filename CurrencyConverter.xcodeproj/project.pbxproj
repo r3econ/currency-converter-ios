@@ -14,6 +14,7 @@
 		86FB804B20E3EEE5002688B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FB804920E3EEE5002688B9 /* LaunchScreen.storyboard */; };
 		86FB805620E3EEE5002688B9 /* CurrencyConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB805520E3EEE5002688B9 /* CurrencyConverterTests.swift */; };
 		86FB806120E3EEE5002688B9 /* CurrencyConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB806020E3EEE5002688B9 /* CurrencyConverterUITests.swift */; };
+		86FB807020E3F0EE002688B9 /* ExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB806F20E3F0EE002688B9 /* ExchangeRate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		86FB805C20E3EEE5002688B9 /* CurrencyConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FB806020E3EEE5002688B9 /* CurrencyConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyConverterUITests.swift; sourceTree = "<group>"; };
 		86FB806220E3EEE5002688B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86FB806F20E3F0EE002688B9 /* ExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		86FB803F20E3EEE4002688B9 /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				86FB806E20E3F0C8002688B9 /* Model */,
 				86FB804020E3EEE4002688B9 /* AppDelegate.swift */,
 				86FB804220E3EEE4002688B9 /* MainViewController.swift */,
 				86FB804420E3EEE4002688B9 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				86FB806220E3EEE5002688B9 /* Info.plist */,
 			);
 			path = CurrencyConverterUITests;
+			sourceTree = "<group>";
+		};
+		86FB806E20E3F0C8002688B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86FB806F20E3F0EE002688B9 /* ExchangeRate.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				86FB804320E3EEE4002688B9 /* MainViewController.swift in Sources */,
+				86FB807020E3F0EE002688B9 /* ExchangeRate.swift in Sources */,
 				86FB804120E3EEE4002688B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
