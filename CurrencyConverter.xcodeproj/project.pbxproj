@@ -19,6 +19,7 @@
 		86FB807720E3F3D9002688B9 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB807620E3F3D9002688B9 /* WebService.swift */; };
 		86FB807920E3F50A002688B9 /* WebService+Calls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB807820E3F50A002688B9 /* WebService+Calls.swift */; };
 		86FB807B20E3F62D002688B9 /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB807A20E3F62D002688B9 /* Requests.swift */; };
+		86FB807E20E3F714002688B9 /* ExchangeRateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB807D20E3F714002688B9 /* ExchangeRateRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		86FB807620E3F3D9002688B9 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		86FB807820E3F50A002688B9 /* WebService+Calls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebService+Calls.swift"; sourceTree = "<group>"; };
 		86FB807A20E3F62D002688B9 /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		86FB807D20E3F714002688B9 /* ExchangeRateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		86FB803F20E3EEE4002688B9 /* CurrencyConverter */ = {
 			isa = PBXGroup;
 			children = (
+				86FB807C20E3F706002688B9 /* Helpers */,
 				86FB804C20E3EEE5002688B9 /* Info.plist */,
 				86FB804020E3EEE4002688B9 /* AppDelegate.swift */,
 				86FB806E20E3F0C8002688B9 /* Model */,
@@ -170,6 +173,14 @@
 				86FB807820E3F50A002688B9 /* WebService+Calls.swift */,
 			);
 			path = WebService;
+			sourceTree = "<group>";
+		};
+		86FB807C20E3F706002688B9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				86FB807D20E3F714002688B9 /* ExchangeRateRepository.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +317,7 @@
 				86FB804320E3EEE4002688B9 /* MainViewController.swift in Sources */,
 				86FB807420E3F256002688B9 /* CurrencyPickerViewController.swift in Sources */,
 				86FB807020E3F0EE002688B9 /* ExchangeRate.swift in Sources */,
+				86FB807E20E3F714002688B9 /* ExchangeRateRepository.swift in Sources */,
 				86FB807B20E3F62D002688B9 /* Requests.swift in Sources */,
 				86FB807720E3F3D9002688B9 /* WebService.swift in Sources */,
 				86FB807920E3F50A002688B9 /* WebService+Calls.swift in Sources */,
